@@ -2,10 +2,12 @@
   "name": "cafetest",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
+    "@types/cross-spawn": "^6.0.2",
     "@types/jest": "^26.0.20",
     "@types/node": "^12.19.12",
     "@types/react": "^16.14.2",
@@ -20,6 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "serve": "serve -s build",
+    "test:e2e": "node --loader ts-node/esm.mjs e2e/runner.ts",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,5 +43,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "consola": "^2.15.0",
+    "cross-spawn": "^7.0.3",
+    "serve": "^11.3.2",
+    "testcafe": "^1.10.1",
+    "ts-node": "^9.1.1"
   }
 }
