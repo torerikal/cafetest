@@ -7,7 +7,7 @@ on:
 
 jobs:
   setup:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
@@ -20,9 +20,9 @@ jobs:
           key: e2e-yarn-${{ hashFiles('**\yarn.lock') }}
           restore-keys: e2e-yarn-
       - run: yarn
-  Linux:
+  windows:
     needs: [setup]
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     strategy:
       matrix:
         browser: [chrome,firefox]
